@@ -70,8 +70,8 @@ fun View(){
         Email()
         Direccion()
         FechaNacimiento()
-        Boton()
         ComboBox()
+        Boton()
     }
 }
 @Composable
@@ -143,7 +143,7 @@ fun ComboBox(){
 
     Column(modifier = Modifier.fillMaxWidth()){
 
-       OutlinedTextField(
+       TextField(
 
            label ={ Text ("Ocupacion ")},
            trailingIcon = {
@@ -151,7 +151,6 @@ fun ComboBox(){
                Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = null)
 
            },
-
            value = OcupacionSelecionada, onValueChange = { OcupacionSelecionada ==it },
        readOnly = true,enabled = false ,
        modifier = Modifier
@@ -160,7 +159,7 @@ fun ComboBox(){
                Log.e("tag", "expandido ")
 
            }
-           .fillMaxWidth()
+           .fillMaxWidth().wrapContentSize(Alignment.Center)
 
 
        )
